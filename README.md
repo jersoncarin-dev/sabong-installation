@@ -68,13 +68,15 @@ You can use this config
 // websocket_supervisorconf.config
 
 [program:sabong_websocket]
-command=/opt/plesk/php/7.4/bin/php # Modify if needed the path of php executable /var/www/vhosts/betting.sabong.wedevit.xyz/httpdocs/artisan websocket:serve # document root of application that located the artisan file
+command=/opt/plesk/php/7.4/bin/php  /var/www/vhosts/betting.sabong.wedevit.xyz/httpdocs/artisan websocket:serve # document root of application that located the artisan file
 autostart=true
 autorestart=true
 user=root
 redirect_stderr=true
 stdout_logfile=/var/www/vhosts/betting.sabong.wedevit.xyz/httpdocs/storage/logs/websocket.log # your log path
 stderr_logfile=/var/www/vhosts/betting.sabong.wedevit.xyz/httpdocs/storage/logs/websocket.error.log # your error log path
+
+// Note you should modify this php executable path `/opt/plesk/php/7.4/bin/php`
 ```
 
 Done! Happy Installing
