@@ -30,6 +30,10 @@ php artisan websocket:serve
 // Open .env and change BASE_URL
 
 // Important note You should modify this according to your setup
+// this is configuration of Websocket server
+// WS_HOST is the host of the backend, it's just like BASE_URL but without protocol and no trailing slashes
+// WS_PORT is the port of the backend, usually server configured 8080 by default but you may change it if needed
+// WS_ADDRESS is the IP Address of the web server, this should very important to make websocket work
 WS_HOST=betting.sabong.wedevit.xyz
 WS_PORT=8080
 WS_ADDRESS=68.183.228.46
@@ -56,6 +60,12 @@ location /wss/ {
 	proxy_set_header X-Forwarded-Proto https;
 	reset_timedout_connection on;
 }
+```
+
+If your using supervisord
+You can use this config
+```sh
+websocket_supervisorconf.config
 ```
 
 Done! Happy Installing
